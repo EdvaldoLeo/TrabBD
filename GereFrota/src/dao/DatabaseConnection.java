@@ -10,11 +10,21 @@ public class DatabaseConnection {
 
 	public static Connection getConnection() throws ClassNotFoundException,
 			SQLException {
+		
+		// Configuração dos parâmetros de conexão
+        String server = "localhost";
+        String port = "1521";               // Porta TCP padrão do Oracle
+        String database = "local";
+
+        // Configuração dos parâmetros de autenticação
+        String user = "root";
+        String pwd = "aluno";
+        
 		if (con == null) {
-			Class.forName("com.mysql.jdbc.Driver");
-		}
-		con = DriverManager.getConnection(
-				"jdbc:mysql://localhost:3306/bd_transp", "root", "vertrigo");
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		}		 
+		con = DriverManager.getConnection("jdbc:oracle:thin:@" + server + ":" + port + ":orcl",user,pwd);
+		
 		return con;
 	}
 
