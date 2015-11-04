@@ -1,7 +1,7 @@
 package model;
 
 import java.util.Date;
-
+//teste de modificacao
 public class Fornecedor {
 	String cnpj;
 	String nome;
