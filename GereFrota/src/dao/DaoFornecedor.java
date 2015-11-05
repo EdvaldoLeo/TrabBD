@@ -10,7 +10,7 @@ import java.util.List;
 
 import dao.DatabaseConnection;
 import model.Fornecedor;
-
+// DAO Fornecedor
 public class DaoFornecedor implements IDaoFornecedor {
 
 	@Override
