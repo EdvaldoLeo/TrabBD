@@ -1,6 +1,6 @@
 package model;
 
-
+//trabalho de BD
 
 import java.sql.Connection;
 import java.sql.DriverManager;
