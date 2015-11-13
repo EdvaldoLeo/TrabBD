@@ -11,19 +11,19 @@ public class DatabaseConnection {
 	public static Connection getConnection() throws ClassNotFoundException,
 			SQLException {
 		
-		// ConfiguraÁ„o dos par‚metros de conex„o
+		// Configura√ß√£o dos par√¢metros de conex√£o
         String server = "localhost";
-        String port = "1521";               // Porta TCP padr„o do Oracle
-        String database = "local";
+        String port = "1521";               // Porta TCP padr√£o do Oracle
+        String database = "xe";
 
-        // ConfiguraÁ„o dos par‚metros de autenticaÁ„o
+        // Configura√ß√£o dos par√¢metros de autentica√ß√£o
         String user = "root";
-        String pwd = "aluno";
+        String pwd = "fatec";
         
 		if (con == null) {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 		}		 
-		con = DriverManager.getConnection("jdbc:oracle:thin:@" + server + ":" + port + ":orcl",user,pwd);
+		con = DriverManager.getConnection("jdbc:oracle:thin:@" + server + ":" + port + ":"+ database ,user,pwd);
 		
 		return con;
 	}
