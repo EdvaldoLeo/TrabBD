@@ -4,7 +4,7 @@ import java.util.List;
 
 import model.Fornecedor;
 
-public interface IDaoFornecedor {
+public interface FornecedorDao {
 	public void adicionar(Fornecedor f);
 
 	public void alterar(Fornecedor f);

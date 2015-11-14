@@ -1,0 +1,137 @@
+@CHARSET "UTF-8";
+
+h1 {
+	color: #999;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	text-align: right;
+}
+
+h2 {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	text-align: center;
+	color: #999;
+}
+
+h3 {
+	color: #999;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 100%;
+}
+
+h4 {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color: #999;
+	text-align: center;
+	margin: 0px auto;
+}
+
+h6 {
+	color: #333;
+	background: #FCF;
+	margin-right: 50px;
+	margin-left: 50px;
+	font: 60% "Trebuchet MS", Arial, Helvetica, sans-serif;
+	padding: 5px;
+}
+
+#geral {
+	height: auto;
+	width: 980px;
+	margin: 0px auto;
+}
+
+
+#topo {
+	text-align: center;
+	height: 128px;
+	width: 980px;
+}
+
+#topo_imagem {
+	background-image: url(../imagens/caminhao.png);
+	background-repeat: no-repeat;
+	width: 128px;
+	height: 128px;
+	float: left;
+	margin-left: 100px;
+}
+
+#topo_texto {
+	height: 128px;
+	padding-left: 30px;
+	width: 300px;
+	float: left;
+}
+
+#barraMenu {
+	height: 39px;
+	width: 900px;
+	padding: 0px;
+	border-top: 1px solid #666;
+	border-bottom: 1px solid #666;
+	background: #FFF;
+	margin-top: 0px;
+	margin-right: 40px;
+	margin-bottom: 0px;
+	margin-left: 40px;
+}
+
+#barraMenu ul li a:hover {
+	color: #FFF;
+	background: #666;
+}
+
+#barraMenu ul {
+	margin: 0px;
+	padding: 0px;
+}
+
+#barraMenu li {
+	list-style: none;
+	float: left;
+}
+
+#barraMenu li a {
+	font: 16px "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color: #666;
+	text-decoration: none;
+	display: block;
+	padding: 10px;
+	margin: 0px;
+}
+
+#conteudo {
+
+	width: 100%
+	padding-top: 5px;
+	border: 1px solid #E1E1E1;
+	text-align: center;
+	padding: 5px;
+	margin-top: 10px
+	margin-right: auto;
+	margin-left: auto;
+}
+
+table{
+	margin-right: auto;
+	margin-left: auto;
+}
+
+table label{
+	text-align: left;
+}
+
+#rodape {
+	height: 40px;
+	width: 980px;
+	font: 10px "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color: #333;
+	text-align: center;
+	margin: 0px;
+	padding-bottom: 20px;
+	padding-top: 20px;
+}
+form {
+	margin-right: auto;
+	margin-left: auto;
+}

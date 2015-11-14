@@ -11,7 +11,7 @@ import java.util.List;
 import dao.DatabaseConnection;
 import model.Fornecedor;
 // DAO Fornecedor
-public class DaoFornecedor implements IDaoFornecedor {
+public class FornecedorDaoImp implements FornecedorDao {
 
 	@Override
 	public void adicionar(Fornecedor f) {

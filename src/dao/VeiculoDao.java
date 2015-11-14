@@ -4,7 +4,7 @@ import java.util.List;
 
 import model.Veiculo;
 
-public interface IDaoVeiculo {
+public interface VeiculoDao {
 
 	public void adicionar(Veiculo v);
 
@@ -12,11 +12,10 @@ public interface IDaoVeiculo {
 
 	public void remover(Veiculo v);
 
-	public List<Veiculo> listarPorPlaca(String t);
+	public Veiculo buscarPorPlaca(String t);
 
 	public List<Veiculo> listarPorStatus(String t);
 	
 	public List<Veiculo> listar();
-
-	public List<String> listarPlacasAtivas();
+	
 }

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Menu Principal</title>
+<link href="estilo/estilo.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div id="geral">
+		<div id="topo">
+			<div id="topo_imagem"></div>
+			<div id="topo_texto">
+				<h2>Controle de manutenção de frota</h2>
+			</div>
+		</div>
+
+		<div id="barraMenu">
+			<ul>
+				<li><a href="veiculo.html">Veículo</a></li>
+				<li><a href="fornecedor.html">Fornecedor</a></li>
+				<li><a href="pecas.html">Peça</a></li>
+				<li><a href="ordemDeServico.html">Ordem de Serviço</a></li>
+			</ul>
+		</div>
+		<div id="conteudo">
+		<h3>Controle de Ordem de Serviço</h3>
+			<form action="./FornecedorController" method="get">
+				<table>
+					<tr>
+						<td>Numero de O.S.:</td>
+						<td><input type="number" name="NumOS"></input></td>
+					</tr>
+					<tr>
+						<td>Placa:</td>
+						<td><input type="text" name="Placa"></input></td>
+					</tr>
+					<tr>
+						<td>Modelo:</td>
+						<td>999999999999</td>
+					</tr>
+					<tr>
+						<td>Marca:</td>
+						<td>999999999999</td>
+					</tr>
+					<tr>
+						<td>Ano/FAB:</td>
+						<td>999999999999</td>
+					</tr>
+					<tr>
+						<td>Ano/Modelo:</td>
+						<td>999999999999</td>
+					</tr>
+					<tr>
+						<td>Motor:</td>
+						<td>999999999999</td>
+					</tr>
+					<tr>
+						<td>Combustivel:</td>
+						<td>999999999999</td>
+					</tr>
+					<td>Funcionário:</td>
+					<td><input type="text" name="Funcionario"></input></td>
+					</tr>
+					<td>Serviço:</td>
+					<td><input type="text" name="Servico"></input></td>
+					</tr>
+					<tr>
+						<td>Descrição:</td>
+						<td><input type="text" name="Descricao"></input></td>
+					</tr>
+					<tr>
+						<td>Peças:</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><input type="text" name="pecas"></input></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><input type="text" name="pecas"></input></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><input type="text" name="pecas"></input></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><input type="text" name="pecas"></input>
+					</tr>
+
+					<tr>
+						<td>Adicionar</td>
+						<td><input type="submit" name="cmd" value="Adicionar"></input></td>
+					</tr>
+					<tr>
+						<td>Pesquisar</td>
+						<td><input type="submit" name="cmd" value="Pesquisar"></input></td>
+					</tr>
+					<tr>
+						<td>Atualizar</td>
+						<td><input type="submit" name="cmd" value="Atualizar"></input></td>
+					</tr>
+					<tr>
+						<td><a href="index.html">Menu</a></td>
+						<td><input type="submit" name="cmd" value="Menu"></input></td>
+					</tr>
+
+				</table>
+
+
+			</form>
+		</div>
+		<div style="clear: both"></div>
+		<div id=rodape>Trabalho de Laboratório de Banco de Dados</div>
+	</div>
+</body>
+</html>
