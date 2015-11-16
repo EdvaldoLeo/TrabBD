@@ -40,7 +40,6 @@ h6 {
 	margin: 0px auto;
 }
 
-
 #topo {
 	text-align: center;
 	height: 128px;
@@ -101,24 +100,12 @@ h6 {
 }
 
 #conteudo {
-
-	width: 100%
-	padding-top: 5px;
+	width: 100% padding-top: 5px;
 	border: 1px solid #E1E1E1;
 	text-align: center;
 	padding: 5px;
-	margin-top: 10px
-	margin-right: auto;
+	margin-top: 10px margin-right: auto;
 	margin-left: auto;
-}
-
-table{
-	margin-right: auto;
-	margin-left: auto;
-}
-
-table label{
-	text-align: left;
 }
 
 #rodape {
@@ -131,7 +118,49 @@ table label{
 	padding-bottom: 20px;
 	padding-top: 20px;
 }
+
+table {
+	margin-right: auto;
+	margin-left: auto;
+	text-align: left;
+}
+
 form {
 	margin-right: auto;
 	margin-left: auto;
+}
+
+/* Definição de estilos para toda a tabela*/
+.tabela {
+	border-collapse: collapse;
+	border: 1px solid #808080;
+}
+
+.tabela	tr:nth-child(odd) {
+	background-color: #ffffff;
+}
+
+.tabela tr:nth-child(even) {
+	background-color: #e4e3f9;
+}
+
+/* Definição de estilos para linha de cabeçalho da tabela*/
+.cabecalho {
+	text-align: center;
+	font-weight: bold;
+	color: Snow;
+	background: #7c84e4;
+	padding: 5px;
+}
+
+.col1 {
+	padding: 5px;
+}
+
+.col2 {
+	padding: 5px;
+}
+
+.col3 {
+	padding: 5px;
 }

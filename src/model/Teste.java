@@ -24,18 +24,18 @@ public class Teste {
 	public static void main(String[] args) throws ParseException {
 
 		
-		DateFormat formatter = new SimpleDateFormat("yyyy");  
+		//DateFormat formatter = new SimpleDateFormat("yyyy");  
 		
-		Veiculo v = new Veiculo();
-		v.marca = "GM";
-		v.modelo = "corsa";
-		v.anoFabricacao = new java.sql.Date(((java.util.Date)formatter.parse("2010")).getTime());
-		v.anoModelo = new java.sql.Date(((java.util.Date)formatter.parse("2011")).getTime());
-		v.status = EnumStatusVeiculo.DISPONIVEL.toString();
-		v.placa = "dde0909";
+		//Veiculo v = new Veiculo();
+		//v.marca = "GM";
+		//v.modelo = "corsa";
+		//v.anoFabricacao = new java.sql.Date(((java.util.Date)formatter.parse("2010")).getTime());
+		//v.anoModelo = new java.sql.Date(((java.util.Date)formatter.parse("2011")).getTime());
+		//v.status = EnumStatusVeiculo.DISPONIVEL.toString();
+		//v.placa = "dde0909";
 
-		VeiculoDao dv = new VeiculoDaoImp();
-		dv.adicionar(v);
+		//VeiculoDao dv = new VeiculoDaoImp();
+		//dv.adicionar(v);
 
 		// List<Veiculo> vs = d.listarPorPlaca("d");
 		// DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");

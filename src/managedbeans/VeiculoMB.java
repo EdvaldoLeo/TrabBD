@@ -12,15 +12,16 @@ import javax.faces.context.FacesContext;
 import dao.VeiculoDaoImp;
 import dao.VeiculoDao;
 import model.Veiculo;
+import servicos.EnumStatusVeiculo;
 
 @ManagedBean
 @SessionScoped
 public class VeiculoMB implements Serializable {
 
 	private static final long serialVersionUID = -7432112812752393705L;
-	private Veiculo veicAtual = new Veiculo();;
-	private VeiculoDao veicDAO = new VeiculoDaoImp();;
-	private List<Veiculo> veiculos = new ArrayList<Veiculo>();;
+	private Veiculo veicAtual = new Veiculo();
+	private VeiculoDao veicDAO = new VeiculoDaoImp();
+	private List<Veiculo> veiculos = new ArrayList<Veiculo>();
 
 	public Veiculo getVeicAtual() {
 		return veicAtual;
@@ -43,35 +44,25 @@ public class VeiculoMB implements Serializable {
 		try {
 			veicDAO.adicionar(veicAtual);
 			veicAtual = new Veiculo();
-			FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Veiculo adicionado com sucesso!", "TESTE");
 			FacesContext fc = FacesContext.getCurrentInstance();
-			fc.addMessage("", msg);
+			fc.addMessage("", new FacesMessage(FacesMessage.SEVERITY_INFO, "Veículo adicionado com sucesso!", ""));
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			FacesContext fc = FacesContext.getCurrentInstance();
+			fc.addMessage("", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro ao adicionar o veículo!", ""));
 			e.printStackTrace();
 		}
 		return "";
 	}
-
-	public String carregar(Veiculo v) {
-		try {
-			veicAtual = v;
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return "";
-	}
-
+	
 	public String atualizar() {
 		try {
 			veicDAO.alterar(veicAtual);
 			veicAtual = new Veiculo();
-			FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Veiculo atualizado com sucesso!", "");
 			FacesContext fc = FacesContext.getCurrentInstance();
-			fc.addMessage("", msg);
+			fc.addMessage("", new FacesMessage(FacesMessage.SEVERITY_INFO, "Veículo atualizado com sucesso!", ""));
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			FacesContext fc = FacesContext.getCurrentInstance();
+			fc.addMessage("", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro ao atualizar o veículo!", ""));
 			e.printStackTrace();
 		}
 		return "";
@@ -80,18 +71,22 @@ public class VeiculoMB implements Serializable {
 	public String remover(Veiculo v) {
 		try {
 			veicDAO.remover(v);
+			FacesContext fc = FacesContext.getCurrentInstance();
+			fc.addMessage("", new FacesMessage(FacesMessage.SEVERITY_INFO, "Veículo excluido com sucesso!", ""));
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			FacesContext fc = FacesContext.getCurrentInstance();
+			fc.addMessage("", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro ao excluir o veículo!", ""));
 			e.printStackTrace();
 		}
 		return "";
 	}
 
-	public String listarPorStatus(String t) {
+	public String listarManutencao() {
 		try {
-			veiculos = veicDAO.listarPorStatus(t);
+			veiculos = veicDAO.listarPorStatus(EnumStatusVeiculo.MANUTENÇÃO.toString());
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			FacesContext fc = FacesContext.getCurrentInstance();
+			fc.addMessage("", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro ao listar veículos!", ""));
 			e.printStackTrace();
 		}
 		return "";
@@ -101,7 +96,8 @@ public class VeiculoMB implements Serializable {
 		try {
 			veiculos = veicDAO.listar();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			FacesContext fc = FacesContext.getCurrentInstance();
+			fc.addMessage("", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro ao listar veículos!", ""));
 			e.printStackTrace();
 		}
 		return "";
@@ -109,9 +105,16 @@ public class VeiculoMB implements Serializable {
 
 	public String buscarPorPlaca() {
 		try {
-			veicAtual = veicDAO.buscarPorPlaca(veicAtual.getPlaca());
+			Veiculo v = veicDAO.buscarPorPlaca(veicAtual.getPlaca());
+			if (v != null) {
+				veicAtual = v;
+			}else{
+				FacesContext fc = FacesContext.getCurrentInstance();
+				fc.addMessage("", new FacesMessage(FacesMessage.SEVERITY_INFO, "Veículo não cadastrado!", ""));
+			}
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			FacesContext fc = FacesContext.getCurrentInstance();
+			fc.addMessage("", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro ao listar veículos!", ""));
 			e.printStackTrace();
 		}
 		return "";

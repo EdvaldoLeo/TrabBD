@@ -1,47 +1,68 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta  http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Menu Principal</title>
-<link href="estilo/estilo.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>GereFrota</title>
+	<link href="estilo/estilo.css" rel="stylesheet" type="text/css" />
+</h:head>
+<h:body>
 	<div id="geral">
 		<div id="topo">
 			<div id="topo_imagem"></div>
 			<div id="topo_texto">
-				<h2>Controle de manutenção de frota</h2>
+				<h2>Gerenciador de Frota</h2>
 			</div>
 		</div>
 
 		<div id="barraMenu">
 			<ul>
-				<li><a href="veiculo.xhtml" >Veículo</a></li>
-				<li><a href="fornecedor.Xhtml" >Fornecedor</a></li>
-				<li><a href="pecas.Xhtml" >Peça</a></li>
-				<li><a href="ordemDeServico.Xhtml" >Ordem de
-						Serviço</a></li>
+				<li><a href="index.xhtml">Principal</a></li>
+				<li><a href="veiculo.xhtml">Veículo</a></li>
+				<li><a href="fornecedor.xhtml">Fornecedor</a></li>
+				<li><a href="pecas.xhtml">Peça</a></li>
+				<li><a href="ordemDeServico.xhtml">Ordem de Serviço</a></li>
 			</ul>
 		</div>
 		<div id="conteudo">
-			<h3>Veiculos em manutenção</h3>
-			<!-- Esta parte do codigo sera modificada conforme o JSF -->
-			<table>
-				<tr>
-					<th>Marca</th>
-					<th>Modelo</th>
-					<th>Placa</th>
-				</tr>
-				<tr>
-					<td>Iveco</td>
-					<td>240E25 Tector</td>
-					<td>CBD9040</td>
-				</tr>
-			</table>
+			<h3>Veículos em Manutenção</h3>
+			<h:messages />
+			<!-- ALTERACOES SOMENTE DAQUI ABAIXO -->
+			<f:view>
+				<h:form target="#{veiculoMB.listarManutencao()}">
+					<h:dataTable var="veic" value="#{veiculoMB.getVeiculos()}"
+						styleClass="tabela" headerClass="cabecalho"
+						columnClasses="col1,col2,col3">
 
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Placa" />
+							</f:facet>
+							<h:outputText value="#{veic.placa}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Marca" />
+							</f:facet>
+							<h:outputText value="#{veic.marca}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Modelo" />
+							</f:facet>
+							<h:outputText value="#{veic.modelo}" />
+						</h:column>
+					</h:dataTable>
+
+				</h:form>
+			</f:view>
+
+			<!-- ALTERACOES SOMENTE DAQUI ACIMA -->
 		</div>
 		<div style="clear: both"></div>
-		<div id=rodape>Trabalho de Laboratório de Banco de Dados</div>
+		<div id="rodape">Trabalho de Laboratório de Banco de Dados</div>
 	</div>
-</body>
+</h:body>
 </html>

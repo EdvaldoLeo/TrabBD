@@ -13,62 +13,62 @@
 		<div id="topo">
 			<div id="topo_imagem"></div>
 			<div id="topo_texto">
-				<h2>Controle de manutenção de frota</h2>
+				<h2>Gerenciador de Frota</h2>
 			</div>
 		</div>
 
 		<div id="barraMenu">
 			<ul>
+				<li><a href="index.xhtml">Principal</a></li>
 				<li><a href="veiculo.xhtml">Veículo</a></li>
-				<li><a href="fornecedor.html">Fornecedor</a></li>
-				<li><a href="pecas.html">Peça</a></li>
-				<li><a href="ordemDeServico.html">Ordem de Serviço</a></li>
+				<li><a href="fornecedor.xhtml">Fornecedor</a></li>
+				<li><a href="pecas.xhtml">Peça</a></li>
+				<li><a href="ordemDeServico.xhtml">Ordem de Serviço</a></li>
 			</ul>
 		</div>
 		<div id="conteudo">
-			<h3>Controle do Veiculo</h3>
+			<h3>Veículos</h3>
 			<h:messages />
 			<!-- ALTERACOES SOMENTE DAQUI ABAIXO -->
 			<h:form>
 				<h:panelGrid columns="3">
 					<h:outputLabel value="Placa:" />
-					<h:inputText id="placa" value="#{veiculoMB.veicAtual.placa}"> <f:validateLength minimum="7" maximum="7" /> </h:inputText>
-					<h:commandButton name="buscar" action="#{veiculoMB.buscarPorPlaca}"
-						value="Buscar" />
+					<h:inputText id="placa" value="#{veiculoMB.veicAtual.placa}">
+						<f:validateLength minimum="7" maximum="7" />
+					</h:inputText>
+					<h:commandButton name="buscar" value=">>"
+						action="#{veiculoMB.buscarPorPlaca}" />
 
 					<h:outputLabel value="Marca:" />
 					<h:inputText id="marca" value="#{veiculoMB.veicAtual.marca}" />
-					<h:message for="marca" />
+					<!-- sem nada -->
 
 					<h:outputLabel value="Modelo:" />
 					<h:inputText id="modelo" value="#{veiculoMB.veicAtual.modelo}" />
-					<h:message for="modelo" />
-
-					<h:outputLabel value="Ano Fabricação:" />
-					<h:inputText id="anoFab"
-						value="#{veiculoMB.veicAtual.anoFabricacao}">
-						<f:convertDateTime pattern="yyyy" locale="pt_BR"
-							timeZone="americas/Sao_Paulo" />
-					</h:inputText>
-					<h:message for="anoFab"></h:message>
-
-
-
-					<h:outputLabel value="Ano Modelo:" />
-					<h:inputText id="anoMod" value="#{veiculoMB.veicAtual.anoModelo}">
-						<f:convertDateTime pattern="yyyy" locale="pt_BR"
-							timeZone="americas/Sao_Paulo" />
-					</h:inputText>
-					<h:message for="anoMod"></h:message>
-
 					<!-- sem nada -->
-					<h:commandButton action="#{veiculoMB.adicionar}" value="Adicionar" />
-					<h:commandButton action="#{veiculoMB.atualizar}" value="Atualizar" />
 
+					<h:outputLabel value="Ano Fab.:" />
+					<h:inputText id="anoFab"
+						value="#{veiculoMB.veicAtual.anoFabricacao}" />
+					<!-- sem nada -->
+
+					<h:outputLabel value="Ano Mod.:" />
+					<h:inputText id="anoMod" value="#{veiculoMB.veicAtual.anoModelo}" />
+					<!-- sem nada -->
+
+					<h:outputLabel value="Status:" />
+					<h:inputText value="#{veiculoMB.veicAtual.status}" disabled="true" />
+					<!-- sem nada -->
+
+					<h:outputLabel />
+					<h:panelGroup>						
+						<h:commandButton action="#{veiculoMB.adicionar}" value="Adicionar"  />
+						<h:commandButton action="#{veiculoMB.atualizar}" value="Atualizar" />
+					</h:panelGroup>
 
 				</h:panelGrid>
 			</h:form>
-<!-- ALTERACOES SOMENTE DAQUI ACIMA -->
+			<!-- ALTERACOES SOMENTE DAQUI ACIMA -->
 		</div>
 		<div style="clear: both"></div>
 		<div id="rodape">Trabalho de Laboratório de Banco de Dados</div>

@@ -1,7 +1,6 @@
 package model;
 
 import java.io.Serializable;
-import java.util.Date;
 
 public class Veiculo implements Serializable{
 	/**
@@ -9,20 +8,20 @@ public class Veiculo implements Serializable{
 	 */
 	private static final long serialVersionUID = -2228890394666159891L;
 	
-	String placa;
-	String marca;
-	String modelo;
-	Date anoFabricacao= new Date();;
-	Date anoModelo= new Date();;
-	String status;
+	private String placa;
+	private String marca;
+	private String modelo;
+	private int anoFabricacao;
+	private int anoModelo;
+	private String status;
 
 	
 	public String getPlaca() {
 		return placa;
 	}
-
+	
 	public void setPlaca(String placa) {
-		this.placa = placa;
+		this.placa = placa.toUpperCase();
 	}
 
 	public String getMarca() {
@@ -41,19 +40,19 @@ public class Veiculo implements Serializable{
 		this.modelo = modelo;
 	}
 
-	public Date getAnoFabricacao() {
+	public int getAnoFabricacao() {
 		return anoFabricacao;
 	}
 
-	public void setAnoFabricacao(Date anoFabricacao) {
+	public void setAnoFabricacao(int anoFabricacao) {
 		this.anoFabricacao = anoFabricacao;
 	}
 
-	public Date getAnoModelo() {
+	public int getAnoModelo() {
 		return anoModelo;
 	}
 
-	public void setAnoModelo(Date anoModelo) {
+	public void setAnoModelo(int anoModelo) {
 		this.anoModelo = anoModelo;
 	}
 
