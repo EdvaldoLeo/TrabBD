@@ -3,29 +3,28 @@ package model;
 import java.util.Date;
 
 public class Fornecedor {
-	String cnpj;
-	String nome;
-	String cep;
-	String rua;
-	String num;
-	String compl;
-	String bairro;
-	String cidade;
-	String uf;
-	String fone1;
-	String fone2;
-	String status;
-	Date dtCadastro;
-	String contato;
-	String observacao;
-
-	public Fornecedor(String cnpj) {
-		super();
-		this.cnpj = cnpj;
-	}
+	private String cnpj;
+	private String nome;
+	private String cep;
+	private String rua;
+	private String num;
+	private String compl;
+	private String bairro;
+	private String cidade;
+	private String uf;
+	private String fone1;
+	private String fone2;
+	private String status;
+	private String contato;
+	private String observacao;
+	private Date dtCadastro;
 
 	public String getCnpj() {
 		return cnpj;
+	}
+
+	public void setCnpj(String cnpj) {
+		this.cnpj = cnpj;
 	}
 
 	public String getNome() {
@@ -116,14 +115,6 @@ public class Fornecedor {
 		this.status = status;
 	}
 
-	public Date getDtCadastro() {
-		return dtCadastro;
-	}
-
-	public void setDtCadastro(Date dtCadastro) {
-		this.dtCadastro = dtCadastro;
-	}
-
 	public String getContato() {
 		return contato;
 	}
@@ -138,6 +129,14 @@ public class Fornecedor {
 
 	public void setObservacao(String observacao) {
 		this.observacao = observacao;
-	}	
-		
+	}
+
+	public Date getDtCadastro() {
+		return dtCadastro;
+	}
+
+	public void setDtCadastro(Date dtCadastro) {
+		this.dtCadastro = dtCadastro;
+	}
+
 }
