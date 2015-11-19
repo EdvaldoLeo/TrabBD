@@ -23,6 +23,7 @@ public class PecaMB implements Serializable{
 	private Peca pecaAtual = new Peca();
 	private PecaDao pecaDAO = new PecaDAOImpl();
 	private List<Peca> pecas = new ArrayList<Peca>();
+	
 	public Peca getPecaAtual() {
 		return pecaAtual;
 	}
@@ -39,7 +40,7 @@ public class PecaMB implements Serializable{
 		return pecas;
 	}
 	public void setPecas(List<Peca> pecas) {
-		this.pecas = pecas;
+		this.pecas = pecas; 
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;

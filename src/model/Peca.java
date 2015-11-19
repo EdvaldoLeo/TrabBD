@@ -19,8 +19,6 @@ public class Peca implements Serializable{
 		dtServico = new Date();
 	}
 	
-	
-	
 	public int getNfiscal() {
 		return nfiscal;
 	}

@@ -3,6 +3,7 @@ package model;
 import java.util.Date;
 
 public class Fornecedor {
+	
 	String cnpj;
 	String nome;
 	String cep;
@@ -23,7 +24,7 @@ public class Fornecedor {
 		super();
 		this.cnpj = cnpj;
 	}
-
+	
 	public String getCnpj() {
 		return cnpj;
 	}
