@@ -26,8 +26,8 @@ public class VeiculoDaoImp implements VeiculoDao {
 		st.setString(1, v.getPlaca());
 		st.setString(2, v.getMarca());
 		st.setString(3, v.getModelo());
-		st.setInt(4, v.getAnoFabricacao());
-		st.setInt(5, v.getAnoModelo());
+		st.setString(4, v.getAnoFabricacao());
+		st.setString(5, v.getAnoModelo());
 		st.setString(6, EnumStatusVeiculo.DISPONIVEL.toString());
 
 		st.executeUpdate();
@@ -48,8 +48,8 @@ public class VeiculoDaoImp implements VeiculoDao {
 			PreparedStatement st = con.prepareStatement(sb.toString());
 			st.setString(1, v.getMarca());
 			st.setString(2, v.getModelo());
-			st.setInt(3, v.getAnoFabricacao());
-			st.setInt(4, v.getAnoModelo());
+			st.setString(3, v.getAnoFabricacao());
+			st.setString(4, v.getAnoModelo());
 			st.setString(5, v.getStatus());
 			st.setString(6, v.getPlaca());
 
@@ -88,8 +88,8 @@ public class VeiculoDaoImp implements VeiculoDao {
 			v.setPlaca(rs.getString("placa"));
 			v.setMarca(rs.getString("marca"));
 			v.setModelo(rs.getString("modelo"));
-			v.setAnoFabricacao(rs.getInt("ano_fab"));
-			v.setAnoModelo(rs.getInt("ano_mod"));
+			v.setAnoFabricacao(rs.getString("ano_fab"));
+			v.setAnoModelo(rs.getString("ano_mod"));
 			v.setStatus(rs.getString("status"));
 
 		}
@@ -116,8 +116,8 @@ public class VeiculoDaoImp implements VeiculoDao {
 			v.setPlaca(rs.getString("placa"));
 			v.setMarca(rs.getString("marca"));
 			v.setModelo(rs.getString("modelo"));
-			v.setAnoFabricacao(rs.getInt("ano_fab"));
-			v.setAnoModelo(rs.getInt("ano_mod"));
+			v.setAnoFabricacao(rs.getString("ano_fab"));
+			v.setAnoModelo(rs.getString("ano_mod"));
 			v.setStatus(rs.getString("status"));
 			listaVeiculos.add(v);
 		}
@@ -143,8 +143,8 @@ public class VeiculoDaoImp implements VeiculoDao {
 			v.setPlaca(rs.getString("placa"));
 			v.setMarca(rs.getString("marca"));
 			v.setModelo(rs.getString("modelo"));
-			v.setAnoFabricacao(rs.getInt("ano_fab"));
-			v.setAnoModelo(rs.getInt("ano_mod"));
+			v.setAnoFabricacao(rs.getString("ano_fab"));
+			v.setAnoModelo(rs.getString("ano_mod"));
 			v.setStatus(rs.getString("status"));
 			listaVeiculos.add(v);
 		}

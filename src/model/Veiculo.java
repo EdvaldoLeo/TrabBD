@@ -1,18 +1,12 @@
 package model;
 
-import java.io.Serializable;
-
-public class Veiculo implements Serializable{
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -2228890394666159891L;
-	
+public class Veiculo {
+		
 	private String placa;
 	private String marca;
 	private String modelo;
-	private int anoFabricacao;
-	private int anoModelo;
+	private String anoFabricacao;
+	private String anoModelo;
 	private String status;
 
 	
@@ -40,19 +34,19 @@ public class Veiculo implements Serializable{
 		this.modelo = modelo;
 	}
 
-	public int getAnoFabricacao() {
+	public String getAnoFabricacao() {
 		return anoFabricacao;
 	}
 
-	public void setAnoFabricacao(int anoFabricacao) {
+	public void setAnoFabricacao(String anoFabricacao) {
 		this.anoFabricacao = anoFabricacao;
 	}
 
-	public int getAnoModelo() {
+	public String getAnoModelo() {
 		return anoModelo;
 	}
 
-	public void setAnoModelo(int anoModelo) {
+	public void setAnoModelo(String anoModelo) {
 		this.anoModelo = anoModelo;
 	}
 

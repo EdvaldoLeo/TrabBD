@@ -20,8 +20,8 @@ public class FornecedorDaoImp implements FornecedorDao {
 		Connection con = DatabaseConnection.getConnection();
 
 		StringBuffer sb = new StringBuffer();
-		sb.append("INSERT INTO tb_fornecedor(cnpj_fornecedor, nome, cep, rua, num, compl, bairro, cidade, uf, ");
-		sb.append("fone1, fone2, status, contato, observacao, dtCadastro ) ");
+		sb.append("INSERT INTO tb_fornecedor(cnpj_fornecedor, nome, cep, rua, numero, complemento, bairro, cidade, uf, ");
+		sb.append("fone1, fone2, status, contato, observacao, dt_Cadastro ) ");
 		sb.append("VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
 		PreparedStatement st = con.prepareStatement(sb.toString());
@@ -99,8 +99,8 @@ public class FornecedorDaoImp implements FornecedorDao {
 
 		StringBuffer sb = new StringBuffer();
 
-		sb.append("SELECT cnpj_fornecedor, nome, cep, rua, num, compl, bairro, cidade, uf, ");
-		sb.append("fone1, fone2, status, contato, observacao, dtCadastro ");
+		sb.append("SELECT cnpj_fornecedor, nome, cep, rua, numero, complemento, bairro, cidade, uf, ");
+		sb.append("fone1, fone2, status, contato, observacao, dt_Cadastro ");
 		sb.append("FROM tb_fornecedor");
 		PreparedStatement st = con.prepareStatement(sb.toString());
 
@@ -132,12 +132,12 @@ public class FornecedorDaoImp implements FornecedorDao {
 
 	@Override
 	public Fornecedor buscarPorCnpj(String t) throws ClassNotFoundException, SQLException {
-		
+
 		Connection con = DatabaseConnection.getConnection();
 		Fornecedor f = null;
 		StringBuffer sb = new StringBuffer();
-		sb.append("SELECT cnpj_fornecedor, nome, cep, rua, num, compl, bairro, cidade, uf, ");
-		sb.append("fone1, fone2, status, contato, observacao, dtCadastro ");
+		sb.append("SELECT cnpj_fornecedor, nome, cep, rua, numero, complemento, bairro, cidade, uf, ");
+		sb.append("fone1, fone2, status, contato, observacao, dt_Cadastro ");
 		sb.append("FROM tb_fornecedor WHERE cnpj_fornecedor = ?");
 		PreparedStatement st = con.prepareStatement(sb.toString());
 		st.setString(1, t);
@@ -159,7 +159,7 @@ public class FornecedorDaoImp implements FornecedorDao {
 			f.setContato(rs.getString("contato"));
 			f.setObservacao(rs.getString("observacao"));
 			f.setDtCadastro(rs.getDate("dt_cadastro"));
-			
+
 		}
 		con.close();
 
@@ -173,8 +173,8 @@ public class FornecedorDaoImp implements FornecedorDao {
 		Connection con = DatabaseConnection.getConnection();
 
 		StringBuffer sb = new StringBuffer();
-		sb.append("SELECT cnpj_fornecedor, nome, cep, rua, num, compl, bairro, cidade, uf, ");
-		sb.append("fone1, fone2, status, contato, observacao, dtCadastro ");
+		sb.append("SELECT cnpj_fornecedor, nome, cep, rua, numero, complemento, bairro, cidade, uf, ");
+		sb.append("fone1, fone2, status, contato, observacao, dt_Cadastro ");
 		sb.append("FROM tb_fornecedor WHERE nome like ?");
 		PreparedStatement st = con.prepareStatement(sb.toString());
 		st.setString(1, "%" + t + "%");
@@ -211,4 +211,6 @@ public class FornecedorDaoImp implements FornecedorDao {
 			return null;
 		}
 	}
+	
+	
 }

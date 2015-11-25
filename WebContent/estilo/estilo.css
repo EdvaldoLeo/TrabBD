@@ -101,12 +101,13 @@ h6 {
 
 #conteudo {
 	width: 100% padding-top: 5px;
-	border: 1px solid #E1E1E1;
+	border: 1px solid #E1E1E1 ;
 	text-align: center;
 	padding: 5px;
-	margin-top: 10px; 
+	margin-top: 10px;
 	margin-right: auto;
 	margin-left: auto;
+	radius: 10px;
 }
 
 #rodape {
@@ -131,8 +132,9 @@ form {
 	margin-left: auto;
 }
 
-/* Definição de estilos para toda a tabela*/
+/* Definição de estilos para toda a tabela da pagina index*/
 .tabela {
+	font-size:80%;
 	border-collapse: collapse;
 	border: 1px solid #808080;
 }

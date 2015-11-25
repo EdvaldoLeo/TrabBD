@@ -28,80 +28,93 @@
 		</div>
 		<div id="conteudo">
 			<h3>Fornecedor</h3>
-			<h:messages />			
-			
+			<h:messages />
+
 			<!-- ALTERACOES SOMENTE DAQUI ABAIXO -->
 			<h:form>
 				<h:panelGrid columns="3">
 					<h:outputLabel value="CNPJ:" />
-					<h:inputText id="cnpj" value="#{fornecedorMB.fornAtual.cnpj}" maxlength="14">
+					<h:inputText id="cnpj" value="#{fornecedorMB.fornAtual.cnpj}"
+						maxlength="14">
 						<f:validateLength minimum="14" maximum="14" />
 					</h:inputText>
 					<h:commandButton name="buscar" value=">>"
-						action="#{veiculoMB.buscarPorPlaca}" />
+						action="#{fornecedorMB.buscarPorCnpj}" />
 
 					<h:outputLabel value="Nome:" />
 					<h:inputText id="nome" value="#{fornecedorMB.fornAtual.nome}" />
 					<!-- sem nada -->
 
 					<h:outputLabel value="CEP:" />
-					<h:inputText id="cep" value="#{fornecedorMB.fornAtual.cep}" />
+					<h:inputText id="cep" value="#{fornecedorMB.fornAtual.cep}"
+						maxlength="8" validatorMessage="CEP inválido!">
+						<f:validateLongRange minimum="00000000" maximum="99999999"></f:validateLongRange>
+					</h:inputText>
 					<!-- sem nada -->
 
 					<h:outputLabel value="Rua:" />
-					<h:inputText id="rua"
-						value="#{fornecedorMB.fornAtual.rua}" />
+					<h:inputText id="rua" value="#{fornecedorMB.fornAtual.rua}" />
 					<!-- sem nada -->
 
 					<h:outputLabel value="Número:" />
-					<h:inputText id="numero"
-						value="#{fornecedorMB.fornAtual.numero}" />
+					<h:inputText id="numero" value="#{fornecedorMB.fornAtual.num}" />
 					<!-- sem nada -->
- 
-<h:outputLabel value="Complemento:" />
+
+					<h:outputLabel value="Complemento:" />
 					<h:inputText value="#{fornecedorMB.fornAtual.compl}" />
 					<!-- sem nada -->
-					
+
 					<h:outputLabel value="Bairro:" />
 					<h:inputText value="#{fornecedorMB.fornAtual.bairro}" />
 					<!-- sem nada -->
-					
+
 					<h:outputLabel value="Cidade:" />
 					<h:inputText value="#{fornecedorMB.fornAtual.cidade}" />
 					<!-- sem nada -->
-					
+
 					<h:outputLabel value="UF:" />
 					<h:inputText value="#{fornecedorMB.fornAtual.uf}" />
 					<!-- sem nada -->
-					
-					<h:outputLabel value="Telefone:" />
-					<h:inputText value="#{fornecedorMB.fornAtual.fone1}" />
+
+					<h:outputLabel value="Telefone 1:" />
+					<h:inputText value="#{fornecedorMB.fornAtual.fone1}"
+						validatorMessage="Telefone 1 Inválido!">
+						<f:validateLongRange minimum="1" maximum="99999999999"></f:validateLongRange>
+					</h:inputText>
 					<!-- sem nada -->
-					
-					<h:outputLabel value="Telefone:" />
-					<h:inputText value="#{fornecedorMB.fornAtual.fone2}" />
-					<!-- sem nada -->				
-					
+
+					<h:outputLabel value="Telefone 2:" />
+					<h:inputText value="#{fornecedorMB.fornAtual.fone2}"
+						validatorMessage="Telefone 2 Inválido!">
+						<f:validateLongRange minimum="1" maximum="99999999999"></f:validateLongRange>
+					</h:inputText>
+					<!-- sem nada -->
+
 					<h:outputLabel value="Contato:" />
 					<h:inputText value="#{fornecedorMB.fornAtual.contato}" />
 					<!-- sem nada -->
-					
+
 					<h:outputLabel value="Observação:" />
 					<h:inputText value="#{fornecedorMB.fornAtual.observacao}" />
 					<!-- sem nada -->
 
 					<h:outputLabel value="Data Cadastro:" />
-					<h:inputText value="#{fornecedorMB.fornAtual.dtCadastro}" disabled="true"/>
-					<!-- sem nada -->
-					
-					<h:outputLabel value="Status:" />
-					<h:inputText value="#{fornecedorMB.fornAtual.status}" disabled="true"/>
+					<h:inputText value="#{fornecedorMB.fornAtual.dtCadastro}"
+						disabled="true" converter="javax.faces.DateTime" />
 					<!-- sem nada -->
 
-					<h:outputLabel />
-					<h:panelGroup>
-						<h:commandButton action="#{veiculoMB.adicionar}" value="Adicionar" />
-						<h:commandButton action="#{veiculoMB.atualizar}" value="Atualizar" />
+					<h:outputLabel value="Status:" />
+					<h:inputText value="#{fornecedorMB.fornAtual.status}"
+						disabled="true" />
+					<!-- sem nada -->
+
+					<h:commandButton action="#{fornecedorMB.refresh}"
+							value="Limpar" />
+					<h:panelGroup>						
+						<h:commandButton action="#{fornecedorMB.adicionar}"
+							value="Adicionar" />
+						<h:commandButton action="#{fornecedorMB.atualizar}"
+							value="Atualizar" />
 					</h:panelGroup>
 
 				</h:panelGrid>

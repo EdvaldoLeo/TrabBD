@@ -5,7 +5,7 @@
 	xmlns:h="http://java.sun.com/jsf/html">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>GereFrota</title>
+	<title>Menu Principal</title>
 	<link href="estilo/estilo.css" rel="stylesheet" type="text/css" />
 </h:head>
 <h:body>
@@ -27,17 +27,53 @@
 			</ul>
 		</div>
 		<div id="conteudo">
-			<h3>Veículos em Manutenção</h3>
+			<h3>Ordem de Serviço</h3>
 			<h:messages />
 			<!-- ALTERACOES SOMENTE DAQUI ABAIXO -->
-			<f:metadata>
-				<f:viewAction action="#{veiculoMB.listarManutencao}" />
-			</f:metadata>
-
 			<h:form>
+				<h:panelGrid columns="3">
+					<h:outputLabel value="Numero O.S.: " />
+					<h:inputText id="num" value="#{oservicoMB.osAtual.numero}"
+						converterMessage="Número da O.S. invalido!" maxlength="7" />
+					<h:commandButton name="buscar" value=">>"
+						action="#{oservicoMB.buscarPorNumero}" />
+				</h:panelGrid>
+			</h:form>
+			<p></p>
+			<f:view rendered="#{oservicoMB.mostrarVeiculo}">
+				<h:form>
+					<h:panelGrid columns="4" cellpadding="5" cellspacing="0" border="0"
+						width="500">
+						<h:outputLabel value="Data: " />
+						<h:outputLabel value="#{oservicoMB.osAtual.data}"
+							converter="javax.faces.DateTime" />
+						<h:outputLabel value="Status: " />
+						<h:outputLabel value="#{oservicoMB.osAtual.status}" />
+						<h:outputLabel value="Veículo: " />
+						<h:outputLabel value="#{oservicoMB.osAtual.veiculo.placa}" />
+						<h:outputLabel value="#{oservicoMB.osAtual.veiculo.marca}" />
+						<h:outputLabel value="#{oservicoMB.osAtual.veiculo.modelo}" />
+						<h:outputLabel value="Ano\Mod: " />
+						<h:outputLabel
+							value="#{oservicoMB.osAtual.veiculo.anoFabricacao}/#{oservicoMB.osAtual.veiculo.anoModelo}" />
+						<h:outputLabel value="KM: " />
+						<h:outputLabel value="#{oservicoMB.osAtual.kmServico}" />
+					</h:panelGrid>
+				</h:form>
+				<p></p>
+				<h:outputLabel value="Descrição:" />
+				<h:form>
+					<h:inputTextarea readonly="true"
+						value="#{oservicoMB.osAtual.descricao}" cols="80" rows="10" />
+				</h:form>
+			</f:view>
+			<p></p>
+			<h:outputLabel value="Peças: "></h:outputLabel>
+			<h:form target="">
 				<h:dataTable var="veic" value="#{veiculoMB.veiculos}"
 					styleClass="tabela" headerClass="cabecalho"
 					columnClasses="col1,col2,col3">
+
 					<h:column>
 						<f:facet name="header">
 							<h:outputText value="Placa" />
@@ -67,3 +103,5 @@
 	</div>
 </h:body>
 </html>
+
+

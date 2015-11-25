@@ -33,8 +33,8 @@
 			<h:form>
 				<h:panelGrid columns="3">
 					<h:outputLabel value="Placa:" />
-					<h:inputText id="placa" value="#{veiculoMB.veicAtual.placa}">
-						<f:validateLength minimum="7" maximum="7" />
+					<h:inputText id="placa" value="#{veiculoMB.veicAtual.placa}" validatorMessage="A placa deve ter 7 digitos, 3 letras e 4 numeros!">
+						<f:validateRegex pattern="[A-Z a-z]{3}\d{4}" />
 					</h:inputText>
 					<h:commandButton name="buscar" value=">>"
 						action="#{veiculoMB.buscarPorPlaca}" />
@@ -49,19 +49,20 @@
 
 					<h:outputLabel value="Ano Fab.:" />
 					<h:inputText id="anoFab"
-						value="#{veiculoMB.veicAtual.anoFabricacao}" />
+						value="#{veiculoMB.veicAtual.anoFabricacao}" maxlength="4"/>
 					<!-- sem nada -->
 
 					<h:outputLabel value="Ano Mod.:" />
-					<h:inputText id="anoMod" value="#{veiculoMB.veicAtual.anoModelo}" />
+					<h:inputText id="anoMod" value="#{veiculoMB.veicAtual.anoModelo}" maxlength="4"/>
 					<!-- sem nada -->
 
 					<h:outputLabel value="Status:" />
 					<h:inputText value="#{veiculoMB.veicAtual.status}" disabled="true" />
 					<!-- sem nada -->
 
-					<h:outputLabel />
-					<h:panelGroup>						
+					<h:commandButton action="#{veiculoMB.refresh}"
+							value="Limpar" />
+					<h:panelGroup >						
 						<h:commandButton action="#{veiculoMB.adicionar}" value="Adicionar"  />
 						<h:commandButton action="#{veiculoMB.atualizar}" value="Atualizar" />
 					</h:panelGroup>

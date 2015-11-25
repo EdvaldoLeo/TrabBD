@@ -39,6 +39,10 @@ public class VeiculoMB implements Serializable {
 		this.veiculos = veiculos;
 	}
 
+	public void refresh() {
+		veicAtual = new Veiculo();
+	}
+	
 	public String adicionar() {
 
 		try {

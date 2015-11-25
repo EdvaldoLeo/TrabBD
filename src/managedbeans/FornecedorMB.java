@@ -8,7 +8,6 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
-
 import dao.FornecedorDaoImp;
 import dao.FornecedorDao;
 import model.Fornecedor;
@@ -41,11 +40,15 @@ public class FornecedorMB implements Serializable {
 		this.fornecedores = fornecedores;
 	}
 
+	public void refresh() {
+		fornAtual = new Fornecedor();
+	}
+
 	public String adicionar() {
 
 		try {
 			fornDAO.adicionar(fornAtual);
-			fornAtual = new Fornecedor();
+			refresh();
 			FacesContext fc = FacesContext.getCurrentInstance();
 			fc.addMessage("", new FacesMessage(FacesMessage.SEVERITY_INFO, "Fornecedor adicionado com sucesso!", ""));
 		} catch (Exception e) {
@@ -59,7 +62,7 @@ public class FornecedorMB implements Serializable {
 	public String atualizar() {
 		try {
 			fornDAO.alterar(fornAtual);
-			fornAtual = new Fornecedor();
+			refresh();
 			FacesContext fc = FacesContext.getCurrentInstance();
 			fc.addMessage("", new FacesMessage(FacesMessage.SEVERITY_INFO, "Fornecedor atualizado com sucesso!", ""));
 		} catch (Exception e) {
@@ -73,6 +76,7 @@ public class FornecedorMB implements Serializable {
 	public String remover(Fornecedor v) {
 		try {
 			fornDAO.remover(v);
+			refresh();
 			FacesContext fc = FacesContext.getCurrentInstance();
 			fc.addMessage("", new FacesMessage(FacesMessage.SEVERITY_INFO, "Fornecedor excluido com sucesso!", ""));
 		} catch (Exception e) {
